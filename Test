@@ -1,9 +1,0 @@
-dragon main fire 
-< big x(3) $ >
-< big y(3) $ >
-< x(1): y $ > 
-< shoot x $ >
-< shoot x(1) $ >
-< shoot x(1)(1) $ >
-extinguish
-end
