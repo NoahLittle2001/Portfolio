@@ -1,0 +1,131 @@
+# Doesn't #
+dragon main fire
+  < big row1: 0 $ >
+  < big col1: 0 $ >
+  < big row2: 0 $ >
+  < big col2: 0 $ >
+  < big bool: 0 $ >
+  < burn bool is 0 fire
+    < shoot "Enter Matrix 1 Dimensions: " $ >
+    < shoot "rows: " $ >
+    < consume row1 $ >
+    < shoot "cols: " $ >
+    < consume col1 $ >
+    < shoot "Enter Matrix 2 Dimensions: " $ >
+    < shoot "rows: " $ >
+    < consume row2 $ >
+    < shoot "cols: " $ >
+    < consume col2 $ >
+    < path col1 is row2 here
+      < bool : 1 $ >
+    here >
+  extinguish >
+
+  < big matrix1(row1) $ > 
+  < big matrix2(row2) $ > 
+  < big matrix3(row1) $ >
+  < small boo : 0 $ >
+  < small foo(col2) $ >
+  
+  < burn boo eats row1 fire
+    < foo(boo) : 0 $ >
+    < boo : boo + 1 $ >
+  extinguish >
+  < small coo : 0 $ >
+  < burn coo eats col2 fire
+    < matrix3(coo) : foo $ >
+    < coo : coo + 1 $ >
+  extinguish >
+
+  < shoot "Enter data to Matrix 1: " $ >
+  < hatch get_data[matrix1, row1, col1] >
+  < shoot "Enter data to Matrix 2: " $ >
+  < hatch get_data[matrix2, row2, col2] >
+  
+  < small i : 0 $ >
+  < small j : 0 $ >
+
+  < shoot "Matrix 1: " $ >
+  < hatch print_matrix[matrix1, row1, col1] >
+
+  < shoot "Matrix 2: " $ >
+  < hatch print_matrix[matrix2, row2, col2] >
+
+  < hatch multiply[matrix1, matrix2, matrix3, row1, col1, row2, col2] >
+  < shoot "Result: " $ >
+  < hatch print_matrix[matrix3, row1, col2] >
+  
+
+extinguish
+
+dragon get_data matrix r c fire
+  < big i : 0 $ >
+  < burn i eats r fire 
+    < small j : 0 $ >
+    < small x(c) $ >
+    < burn j eats c fire 
+      < small y : 0 $ >
+      < consume y $ >
+      < x(j) : y $ >
+      < j : j + 1 $ > 
+    extinguish >
+    < i : i + 1 $ > 
+    < matrix(i-1) : x $ >
+  extinguish >
+extinguish
+
+dragon multiply A B C r1 c1 r2 c2 fire
+ 
+  < small i : 0 $ >
+  < burn i eats r1 fire 
+    < small j : 0 $ >
+    < burn j eats c2 fire
+      < small k : 0 $ >
+      < burn k eats r2 fire
+        < small x : 0 $ >
+        < small y : 0 $ >
+        < small z : 0 $ >
+        < small result : 0 $ >
+
+        < small vectX(c2) $ >
+        < vectX : C(i) $ >
+        < x : vectX(j) $ >
+    
+        < small vectY(c1) $ >
+        < vectY : A(i) $ >
+        < y : vectY(k) $ >
+
+        < small vectZ(c1) $ >
+        < vectZ : A(k) $ >
+        < z : vectZ(j) $ >
+
+        < small prod : y * z $ >
+        < result : x + prod $ >
+        < vectX(j) : result $ >
+        < C(i) : vectX $ >
+        < k : k + 1 $ >
+      extinguish >
+      < j : j + 1 $ >
+    extinguish >
+    < i : i + 1 $ >
+  extinguish >
+    
+extinguish
+
+dragon mutate matrix x y val fire
+  < small col : matrix(x) $ >
+  < col(y) : val $ >
+extinguish
+
+dragon print_matrix matrix rows cols fire
+  < small i : 0 $ >
+  < small x(cols) $ >
+  < burn i eats rows fire
+    < x : matrix(i) $ >
+    < shoot x $ >
+    
+    < i : i + 1 $ >
+  extinguish >
+extinguish
+
+end
