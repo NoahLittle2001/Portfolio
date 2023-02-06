@@ -1,0 +1,5 @@
+# Works #
+dragon main fire
+  < shoot "Hello World" $ >
+extinguish
+end

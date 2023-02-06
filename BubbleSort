@@ -1,0 +1,32 @@
+# Works #
+dragon bubble_sort fire
+  < small count: 0 $ > 
+  < shoot "Enter number of items to sort: " $ >
+  < consume count $ >
+  < small list(count) $ > 
+  < small i: 0 $ > 
+  < small j: 0 $ > 
+  < burn i eats count fire  
+      < consume list(i) $ > 
+    < i: i + 1 $ >  
+  extinguish >   
+  < i: 0 $ > 
+  < small temp: 0 $ >
+  < burn i eats count fire    
+    < j: 0 $ >
+    < burn j eats count-i-1 fire 
+      < path list(j) spits list(j + 1) here 
+        < temp: list(j) $ >
+        < list(j): list(j + 1) $ >
+        < list(j + 1): temp $ >
+      here >
+      < j:j+1 $ >
+    extinguish >
+    < i:i+1 $ >
+  extinguish >
+  
+  < i:1 $ >
+  < shoot "sorted list: " $ >
+  < shoot list $ >
+extinguish
+end

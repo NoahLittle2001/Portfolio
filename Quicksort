@@ -1,0 +1,48 @@
+# Works #
+dragon main fire
+  < big i: 0 $ >
+  < big arr(10) $ > 
+  < shoot "Enter 10 integers: " $ >
+  < i : 0 $ >
+  < burn i eats 10 fire  
+      < consume arr(i) $ > 
+    < i: i + 1 $ >  
+  extinguish > 
+  < shoot arr, ":Initial List" $ >
+  < hatch Qsort[arr, 0, 9] >
+
+  < shoot "Sorted Array: ", arr $ >
+extinguish
+
+dragon Qsort array low_index high_index fire 
+  < path low_index eats high_index here
+    < small pivot : array(high_index) $ >
+    < small i : low_index - 1 $ >
+    < small j : low_index $ >
+    < small pi : 0 $ >
+
+    < burn j eats_more high_index-1 fire
+      < path array(j) eats pivot here
+        < i : i + 1 $ >
+        < small temp : array(i) $ >
+        < array(i) : array(j) $ >
+        < array(j) : temp $ >
+      here >
+      < j : j + 1 $ >
+    extinguish >
+
+    < small temp2 : array(i+1) $ >
+    < array(i+1) : array(high_index) $ >
+    < array(high_index) : temp2 $ >
+    < shoot array, "Swap: ", array(i+1), array(high_index) $ >  # TEST #
+
+    
+    < pi : i + 1 $ >
+    < pi : pi - 1 $ >
+    < hatch Qsort[array, low_index, pi] >
+    < pi : pi + 2 $ >
+    < hatch Qsort[array, pi, high_index] >
+  here >
+extinguish
+
+end
