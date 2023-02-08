@@ -5,9 +5,8 @@ This was a project to create my own programming language called DragonsRCool. It
 
 python dragonsRCool.py fileName
 
-____________________________________________________________________________________________________________________________________________________________________________________
 
-DragonsRCool Language Guide
+### DragonsRCool Language Guide
 ____________________________________________________________________________________________________________________________________________________________________________________
 Functions which are called Program:
 
