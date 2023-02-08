@@ -1,3 +1,12 @@
+## About Project
+This was a project to create my own programming language called DragonsRCool. It is not supposed to be an easy language to program in, but was more supposed to be a challege to actually create. Below is a guide of how to write in the language. There are several example programs already written in the language and they look like normal text files. Below is the guide on how to actually run the files.
+
+- The program should be written in a text file. After that the program can be ran by typing in the terminal the following:
+
+- python dragonsRCool.py fileName
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
 DragonsRCool Language Guide
 ____________________________________________________________________________________________________________________________________________________________________________________
 Functions which are called Program:
@@ -122,8 +131,4 @@ A function does not have to declare what it is returning. Just set a variable eq
 < return expr >
 
 ____________________________________________________________________________________________________________________________________________________________________________________
-How to run a created dragonsRCool program:
 
-The program should be written in a text file. after that the program can be ran by typing in the terminal the following:
-
-python dragonsRCool.py fileName
