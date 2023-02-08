@@ -3,7 +3,7 @@ This was a project to create my own programming language called DragonsRCool. It
 
 - The program should be written in a text file. After that the program can be ran by typing in the terminal the following:
 
-- python dragonsRCool.py fileName
+python dragonsRCool.py fileName
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 
